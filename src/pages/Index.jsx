@@ -1,4 +1,5 @@
 import { Container, Text, VStack, Button, Flex, Image } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 import { FaHome, FaUserFriends, FaUsers, FaBroadcastTower, FaSignOutAlt } from "react-icons/fa";
 
 const Index = () => {
@@ -7,9 +8,9 @@ const Index = () => {
       <Flex as="nav" bg="gray.100" p={3} justifyContent="space-between" alignItems="center" position="fixed" w="100%" zIndex="banner">
         <Button leftIcon={<FaHome />} variant="ghost">Home</Button>
         <Flex>
-          <Button leftIcon={<FaUserFriends />} variant="ghost">Member</Button>
-          <Button leftIcon={<FaUsers />} variant="ghost">Team</Button>
-          <Button leftIcon={<FaBroadcastTower />} variant="ghost">Channel</Button>
+          <Button as={Link} to="/members" leftIcon={<FaUserFriends />} variant="ghost">Member</Button>
+          <Button as={Link} to="/teams" leftIcon={<FaUsers />} variant="ghost">Team</Button>
+          <Button as={Link} to="/channels" leftIcon={<FaBroadcastTower />} variant="ghost">Channel</Button>
         </Flex>
         <Button rightIcon={<FaSignOutAlt />} variant="ghost">Log Out</Button>
       </Flex>
