@@ -8,21 +8,42 @@ const channels = [
     name: "General",
     description: "Main communication channel",
     image: "path/to/channel1.png",
-    members: ["John Doe", "Jane Smith", "Alice Johnson"]
+    members: 3
   },
   {
     id: 2,
     name: "Development",
     description: "Channel for development team",
     image: "path/to/channel2.png",
-    members: ["Bob Brown", "Charlie Davis", "Eve White"]
+    members: 3
   },
   {
     id: 3,
     name: "Marketing",
     description: "Channel for marketing team",
     image: "path/to/channel3.png",
-    members: ["Frank Green", "Grace Black", "Hank Blue"]
+    members: 3
+  },
+  {
+    id: 4,
+    name: "Sales",
+    description: "Channel for sales team",
+    image: "path/to/channel4.png",
+    members: 4
+  },
+  {
+    id: 5,
+    name: "Support",
+    description: "Channel for support team",
+    image: "path/to/channel5.png",
+    members: 5
+  },
+  {
+    id: 6,
+    name: "HR",
+    description: "Channel for HR team",
+    image: "path/to/channel6.png",
+    members: 2
   }
 ];
 
@@ -50,19 +71,14 @@ const ChannelPage = () => {
         <VStack spacing={4} mt={4}>
           <Text fontSize="2xl">Channel Information</Text>
           <Text>This page will display details for channels.</Text>
-        <HStack spacing={4} overflowX="auto" w="100%">
+          <HStack spacing={4} overflowX="auto" w="100%">
             {channels.map(channel => (
               <Box key={channel.id} borderWidth="1px" borderRadius="lg" overflow="hidden" minW="300px">
                 <Image src={channel.image} alt={`${channel.name} image`} />
                 <Box p={4}>
                   <Text fontSize="xl" fontWeight="bold">{channel.name}</Text>
                   <Text>{channel.description}</Text>
-                  <Text mt={2} fontWeight="bold">Members:</Text>
-                  <VStack align="start">
-                    {channel.members.map((member, index) => (
-                      <Text key={index}>{member}</Text>
-                    ))}
-                  </VStack>
+                  <Text mt={2} fontWeight="bold">Members: {channel.members}</Text>
                 </Box>
               </Box>
             ))}
